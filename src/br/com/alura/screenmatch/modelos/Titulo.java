@@ -1,14 +1,17 @@
 package br.com.alura.screenmatch.modelos;
 
-import br.com.alura.screenmatch.calculos.Classificavel;
-
-public class Titulo implements Classificavel {
+public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -61,7 +64,7 @@ public class Titulo implements Classificavel {
     }
 
     @Override
-    public int getClassificacao() {
-        return (int) pegaMedia() / 2;
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }

@@ -6,7 +6,7 @@ public class Episodio implements Classificavel {
     private int numero;
     private String nome;
     private Serie serie;
-    private int totalVisualizacoes;  // Corrigido o nome da variável
+    private int totalVisualizacoes;
 
     public int getTotalVisualizacoes() {
         return totalVisualizacoes;
